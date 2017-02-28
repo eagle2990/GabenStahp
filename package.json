@@ -1,0 +1,26 @@
+{
+  "name": "GabenStahp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build:live",
+    "build:live": "nodemon --exec ts-node -- src\\GabenStahp.ts",
+    "build": "tsc && wt-bundle --output ./dist/webtask.js ./dist/GabenStahp.js",
+    "deploy": "npm run build && wt create dist\\webtask.js --name GabenStahp --secret STEAM_API_KEY=YOUR_OWN_STEAM_API_KEY"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "7.0.5",
+    "nodemon": "1.11.0",
+    "ts-node": "2.1.0",
+    "typescript": "2.2.1"
+  },
+  "dependencies": {
+    "async": "2.1.5",
+    "request": "2.79.0"
+  }
+}
